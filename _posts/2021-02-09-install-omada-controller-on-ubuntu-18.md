@@ -9,7 +9,7 @@ date:   2021-02-09 18:43:09 +0100
 # Introduction
 ---
 <br>
-In this tutorial we will see how to install `TP-Link Omada Controller` on a `Ubuntu 18.04` server.
+In this tutorial we will see how to install [TP-Link Omada Controller][omada-info] on a [Ubuntu 18.04][ubuntu-18] server.
 
 My environment is hosted on a Proxmox hypervisor and running on a LXC container.
 
@@ -41,8 +41,9 @@ Install MongoDB v3.6
 > sudo systemctl enable mongod
 ```
 
-Obtain Omada Controller v4 binary from [TP-Link official website](https://www.tp-link.com/en/support/download/omada-software-controller/#Controller_Software) and install it
+Obtain Omada Controller v4 binary from [TP-Link official website][omada-download] and install it
 ```shell
+> cd /tmp
 > wget https://static.tp-link.com/2020/202012/20201211/omada_v4.2.8_linux_x64.deb
 > dpkg -i omada_v4.2.8_linux_x64.deb
 ```
@@ -70,6 +71,6 @@ print_hi('Tom')
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+[omada-download]: https://www.tp-link.com/en/support/download/omada-software-controller/#Controller_Software
+[omada-info]: https://www.tp-link.com/en/omada-sdn/
+[ubuntu-18]: https://releases.ubuntu.com/18.04/
