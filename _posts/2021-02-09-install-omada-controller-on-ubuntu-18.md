@@ -5,8 +5,10 @@ date:   2021-02-09 18:43:09 +0100
 # categories: jekyll update
 ---
 
+---
 # Introduction
-  
+---
+<br>
 In this tutorial we will see how to install `TP-Link Omada Controller` on a `Ubuntu 18.04` server.
 
 My environment is hosted on a Proxmox hypervisor and running on a LXC container.
@@ -16,6 +18,7 @@ The LXC container will be running using the following resources:
   * 512 MB RAM
   * 4 GB disk
 
+---
 # Installation
 ---
 <br/>
