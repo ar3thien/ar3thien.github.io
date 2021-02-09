@@ -50,7 +50,7 @@ Obtain Omada Controller v4 binary from [TP-Link official website][omada-download
 
 Finally set the server timezone
 ```shell
-> timedatectl set-timezone
+> timedatectl set-timezone <timezone>
 ```
 
 [omada-download]: https://www.tp-link.com/en/support/download/omada-software-controller/#Controller_Software
