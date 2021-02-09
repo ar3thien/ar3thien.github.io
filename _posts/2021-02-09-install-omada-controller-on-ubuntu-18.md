@@ -35,8 +35,8 @@ Install MongoDB v3.6
 
 Obtain Omada Controller v4 binary from [TP-Link official website](https://www.tp-link.com/en/support/download/omada-software-controller/#Controller_Software) and install it
 ```shell
-~ wget https://static.tp-link.com/2020/202012/20201211/omada_v4.2.8_linux_x64.deb
-root@mx23907vm:~# dpkg -i omada_v4.2.8_linux_x64.deb
+. wget https://static.tp-link.com/2020/202012/20201211/omada_v4.2.8_linux_x64.deb
+> dpkg -i omada_v4.2.8_linux_x64.deb
 ```
 
 ```shell
