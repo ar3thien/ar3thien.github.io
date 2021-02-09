@@ -8,7 +8,7 @@ date:   2021-02-09 18:43:09 +0100
 # Introduction
 ---
 
-In this tutorial we will see how to install TP-Link Omada Controller on a Ubuntu 18.04 server.
+In this tutorial we will see how to install `TP-Link Omada Controller` on a `Ubuntu 18.04` server.
 
 My environment is running on a Proxmox hypervisor and will be running on a LXC container.
 
