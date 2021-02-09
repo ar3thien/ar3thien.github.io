@@ -11,7 +11,7 @@ date:   2021-02-09 18:43:09 +0100
 <br>
 In this tutorial we will see how to install [TP-Link Omada Controller][omada-info] on a [Ubuntu 18.04][ubuntu-18] server.
 
-My environment is hosted on a Proxmox hypervisor and running on a LXC container.
+My environment is hosted on a [Proxmox][proxmox-info] hypervisor and running on a [LXC][lxc-info] container.
 
 The LXC container will be running using the following resources:
   * 1 vCPU
@@ -74,3 +74,5 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 [omada-download]: https://www.tp-link.com/en/support/download/omada-software-controller/#Controller_Software
 [omada-info]: https://www.tp-link.com/en/omada-sdn/
 [ubuntu-18]: https://releases.ubuntu.com/18.04/
+[lxc-info]: https://linuxcontainers.org/lxc/introduction/
+[proxmox-info]: https://www.proxmox.com/en/proxmox-ve
