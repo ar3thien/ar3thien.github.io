@@ -48,10 +48,11 @@ Obtain Omada Controller v4 binary from [TP-Link official website][omada-download
 > dpkg -i omada_v4.2.8_linux_x64.deb
 ```
 
-Finally set the server timezone
-```shell
-> timedatectl set-timezone
-```
+# __Resource Usage__
+---  
+<br>
+
+
 
 [omada-download]: https://www.tp-link.com/en/support/download/omada-software-controller/#Controller_Software
 [omada-info]: https://www.tp-link.com/en/omada-sdn/
