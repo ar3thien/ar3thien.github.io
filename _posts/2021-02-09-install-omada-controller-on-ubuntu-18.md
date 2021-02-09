@@ -52,7 +52,10 @@ Finally set the server timezone
 ```shell
 > timedatectl set-timezone <timezone>
 ```
+
 # __Final Thoughts__
+---
+<br>
 
 [omada-download]: https://www.tp-link.com/en/support/download/omada-software-controller/#Controller_Software
 [omada-info]: https://www.tp-link.com/en/omada-sdn/
