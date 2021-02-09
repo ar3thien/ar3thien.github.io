@@ -13,9 +13,9 @@ In this tutorial we will see how to install `TP-Link Omada Controller` on a `Ubu
 My environment is hosted on a Proxmox hypervisor and running on a LXC container.
 
 The LXC container will be running using the following resources:
-* 1 vCPU
-* 512 MB RAM
-* 4 GB disk
+  * 1 vCPU
+  * 512 MB RAM
+  * 4 GB disk
 
 # Installation
 ---
