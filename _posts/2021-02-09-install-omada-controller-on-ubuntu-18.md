@@ -6,8 +6,8 @@ date:   2021-02-09 18:43:09 +0100
 ---
 
 # Introduction
----
-&nbsp  
+---  
+
 In this tutorial we will see how to install `TP-Link Omada Controller` on a `Ubuntu 18.04` server.
 
 My environment is hosted on a Proxmox hypervisor and running on a LXC container.
@@ -18,7 +18,7 @@ The LXC container will be running using the following resources:
   * 4 GB disk
 
 # Installation
----
+---  
 
 First step is to update the repo and upgrade to get the latest packages
 ```shell
@@ -46,7 +46,7 @@ Obtain Omada Controller v4 binary from [TP-Link official website](https://www.tp
 ```
 
 # Resource Usage
----
+---  
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
