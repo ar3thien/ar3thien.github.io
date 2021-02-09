@@ -10,9 +10,9 @@ In this tutorial we will see how to install TP-Link Omada Controller on a Ubuntu
 My environment is running on a proxmox hypervisor and will be running on a LXC container.
 
 The LXC container will be running using the following resources:
-1 vCPU
-512 MB RAM
-4 GB disk
+* 1 vCPU
+* 512 MB RAM
+* 4 GB disk
 
 First step is to update the repo and upgrade to get the latest packages
 ```
