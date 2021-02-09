@@ -29,7 +29,7 @@ Install dependencies
 ```
 
 Install MongoDB v3.6
-```shell_terminal
+```shell
 > wget -qO - https://www.mongodb.org/static/pgp/server-3.6.asc | sudo apt-key add -
 > echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 > sudo apt-get update && apt-get install -y mongodb-org
@@ -41,10 +41,6 @@ Obtain Omada Controller v4 binary from [TP-Link official website](https://www.tp
 ```shell
 > wget https://static.tp-link.com/2020/202012/20201211/omada_v4.2.8_linux_x64.deb
 > dpkg -i omada_v4.2.8_linux_x64.deb
-```
-
-```shell
-> cd ~
 ```
 
 # Resource Usage
