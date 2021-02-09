@@ -27,7 +27,7 @@ First step is to update the repo and upgrade to get the latest packages
 > sudo apt-get update && apt-get -y upgrade
 ```
 
-Install dependencies
+Install the required dependencies
 ```shell
 > sudo apt-get -y install openjdk-8-jre-headless jsvc curl gnupg
 ```
