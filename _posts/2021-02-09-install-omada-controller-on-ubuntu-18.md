@@ -25,7 +25,7 @@ Install dependencies
 ```
 
 Install MongoDB v3.6
-```shell
+```shell_terminal
 > wget -qO - https://www.mongodb.org/static/pgp/server-3.6.asc | sudo apt-key add -
 > echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 > sudo apt-get update && apt-get install -y mongodb-org
@@ -35,12 +35,12 @@ Install MongoDB v3.6
 
 Obtain Omada Controller v4 binary from [TP-Link official website](https://www.tp-link.com/en/support/download/omada-software-controller/#Controller_Software) and install it
 ```shell
-. wget https://static.tp-link.com/2020/202012/20201211/omada_v4.2.8_linux_x64.deb
+> wget https://static.tp-link.com/2020/202012/20201211/omada_v4.2.8_linux_x64.deb
 > dpkg -i omada_v4.2.8_linux_x64.deb
 ```
 
 ```shell
-$ cd ~
+> cd ~
 ```
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
