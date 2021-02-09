@@ -18,7 +18,7 @@ The LXC container will be running using the following resources:
 
 # Installation
 ---
-  
+&nbsp;
 First step is to update the repo and upgrade to get the latest packages
 ```shell
 > sudo apt-get update && apt-get -y upgrade
