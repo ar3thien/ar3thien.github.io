@@ -6,7 +6,6 @@ date:   2021-02-09 18:43:09 +0100
 ---
 
 # __Introduction__
----
   
 In this tutorial we will see how to install `TP-Link Omada Controller` on a `Ubuntu 18.04` server.
 
