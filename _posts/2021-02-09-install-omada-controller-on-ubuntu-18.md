@@ -5,7 +5,7 @@ date:   2021-02-09 18:43:09 +0100
 # categories: jekyll update
 ---
 
-# __Introduction__
+# Introduction
   
 In this tutorial we will see how to install `TP-Link Omada Controller` on a `Ubuntu 18.04` server.
 
@@ -18,7 +18,7 @@ The LXC container will be running using the following resources:
 
 # Installation
 ---
-&nbsp;
+<br/>
 First step is to update the repo and upgrade to get the latest packages
 ```shell
 > sudo apt-get update && apt-get -y upgrade
