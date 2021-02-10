@@ -125,7 +125,7 @@ Modify the settings options based on your needs.
 > systemctl start transmission-daemon
 ```
 
-Point minidlna to the media content storage, and restart minidlna
+Point minidlna to the media directory, and restart minidlna
 ```shell
 echo "media_dir=V,/mnt/downloads" >> /etc/minidlna.conf
 systemctl restart minidlna
