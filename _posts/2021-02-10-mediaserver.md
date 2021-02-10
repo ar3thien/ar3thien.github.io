@@ -97,7 +97,7 @@ Stop tranmission service to alter its settings file, then start it
       "rpc-enabled": true,
       "rpc-host-whitelist": "",
       "rpc-host-whitelist-enabled": false,
-      "rpc-password": "{7ca0398783a1b3a464bef523b4edfd5a4f790b1cecpEwNbI",
+      "rpc-password": "",
       "rpc-port": 9091,
       "rpc-url": "/transmission/",
       "rpc-username": "transmission",
