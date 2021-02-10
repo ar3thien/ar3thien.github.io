@@ -22,7 +22,7 @@ The container will be running with the following resources:
 # __Installation__
 ---
 <br>
-First step is to update the repo and upgrade to get the latest packages
+I'm starting from a fresh Ubuntu installation, so I will update the repo and upgrade to get the latest packages
 ```shell
 > sudo apt-get update && apt-get -y upgrade
 ```
