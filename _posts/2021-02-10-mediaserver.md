@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title:  "Install Transmission Client & Minidlna on Debian 10"
 # date:   2021-02-09 18:43:09 +0100
 # categories: jekyll update
@@ -14,10 +14,11 @@ In this tutorial I will show you how to install [transmission][transmission-info
 My environment is hosted on a [Proxmox][proxmox-info] hypervisor and running on a [LXC][lxc-info] container.
 
 The container will be running with the following resources:
-  * CPU:  1, limit: 0.5
-  * RAM:  96 MB
-  * Disk: 4 GB
-  * VLAN: 100
+
+| __CPU__ | 1, limit: 0.5 |
+| __RAM__ | 96 MB |
+| __Disk__ | 4 GB |
+| __VLAN__ | 100 |
 
 # __Objectives__
 ---
