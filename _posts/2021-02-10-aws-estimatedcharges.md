@@ -1,5 +1,6 @@
 ---
 layout: post
+published: false
 title:  "Install Omada Controller on Ubuntu 18.04"
 # date:   2021-02-09 18:43:09 +0100
 # categories: jekyll update
@@ -8,7 +9,7 @@ title:  "Install Omada Controller on Ubuntu 18.04"
 # __Introduction__
 ---
 <br>
-In this tutorial I will show you how to install [TP-Link Omada Controller][omada-info] on a [Ubuntu 18.04][ubuntu-18] machine.
+In this tutorial I will show you how to install [TP-Link Omada Controller][omada-info] on a [Ubuntu 18.04][ubuntu-18] server.
 
 My environment is hosted on a [Proxmox][proxmox-info] hypervisor and running on a [LXC][lxc-info] container.
 
@@ -21,7 +22,7 @@ The container will be running with the following resources:
 # __Installation__
 ---
 <br>
-I'm starting from a fresh Ubuntu installation, so I will update the repo and upgrade the existing packages
+First step is to update the repo and upgrade to get the latest packages
 ```shell
 > sudo apt-get update && apt-get -y upgrade
 ```
@@ -47,14 +48,11 @@ Obtain Omada Controller v4 binary from [TP-Link official website][omada-download
 > dpkg -i omada_v4.2.8_linux_x64.deb
 ```
 
-Finally set the server timezone
-```shell
-> timedatectl set-timezone <timezone>
-```
-
-# __Final Thoughts__
----
+# __Resource Usage__
+---  
 <br>
+
+
 
 [omada-download]: https://www.tp-link.com/en/support/download/omada-software-controller/#Controller_Software
 [omada-info]: https://www.tp-link.com/en/omada-sdn/

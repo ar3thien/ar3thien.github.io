@@ -1,36 +1,35 @@
 ---
 layout: post
-published: false
-title:  "Install Omada Controller on Ubuntu 18.04"
+# published: false
+title:  "Install Transmission Client & Minidlna on Debian 10"
 # date:   2021-02-09 18:43:09 +0100
 # categories: jekyll update
 ---
 
-
 # __Introduction__
 ---
 <br>
-In this tutorial I will show you how to install [TP-Link Omada Controller][omada-info] on a [Ubuntu 18.04][ubuntu-18] server.
+In this tutorial I will show you how to install [transmission][transmission-info] on a [Debian 10][debian-info] machine.
 
 My environment is hosted on a [Proxmox][proxmox-info] hypervisor and running on a [LXC][lxc-info] container.
 
 The container will be running with the following resources:
   * 1 vCPU
-  * 512 MB RAM
+  * 128 MB RAM
   * 4 GB disk
 
 
 # __Installation__
 ---
 <br>
-First step is to update the repo and upgrade to get the latest packages
+I'm starting from a fresh Ubuntu installation, so I will update the repo and upgrade the existing packages
 ```shell
 > sudo apt-get update && apt-get -y upgrade
 ```
 
 Install the required dependencies
 ```shell
-> sudo apt-get -y install openjdk-8-jre-headless jsvc curl gnupg
+> apt install -y transmission-daemon minidlna __cifs-utils__
 ```
 
 Install MongoDB v3.6
@@ -55,8 +54,8 @@ Obtain Omada Controller v4 binary from [TP-Link official website][omada-download
 
 
 
-[omada-download]: https://www.tp-link.com/en/support/download/omada-software-controller/#Controller_Software
-[omada-info]: https://www.tp-link.com/en/omada-sdn/
-[ubuntu-18]: https://releases.ubuntu.com/18.04/
+[transmission-info]: https://transmissionbt.com/
+[debian-info]: https://www.debian.org/
+[debian-10]: https://releases.ubuntu.com/18.04/
 [lxc-info]: https://linuxcontainers.org/lxc/introduction/
 [proxmox-info]: https://www.proxmox.com/en/proxmox-ve
