@@ -42,6 +42,7 @@ Install the required dependencies
 Mount an external storage (NAS)
 ```shell
 > echo "//nas/public/Downloads  /mnt/downloads  cifs    noperm,guest,vers=1.0" > /etc/fstab
+> mount /mnt/downloads
 ```
 
 Stop tranmission service to alter its settings file, then start it.
@@ -124,14 +125,21 @@ Modify the settings options based on your needs.
 > systemctl start transmission-daemon
 ```
 
-# __Resource Usage__
+Point minidlna to the media content storage, and restart minidlna
+```shell
+echo "media_dir=V,/mnt/downloads" >> /etc/minidlna.conf
+systemctl restart minidlna
+```
+
+# __Network__
 ---  
 <br>
-
+For security reason, we will place this server behind a DMZ. I use [OPNSense][opnsense-info] as a firewall.
 
 
 [transmission-info]: https://transmissionbt.com/
 [debian-info]: https://www.debian.org/
 [minidlna-info]: https://wiki.debian.org/minidlna
+[opnsense-info]: https://opnsense.org/
 [lxc-info]: https://linuxcontainers.org/lxc/introduction/
 [proxmox-info]: https://www.proxmox.com/en/proxmox-ve
