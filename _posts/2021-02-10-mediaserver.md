@@ -44,7 +44,8 @@ Mount an external storage (NAS)
 > echo "//nas/public/Downloads  /mnt/downloads  cifs    noperm,guest,vers=1.0" > /etc/fstab
 ```
 
-Stop tranmission service to alter its settings file, then start it
+Stop tranmission service to alter its settings file, then start it.
+Modify the settings options based on your needs.
 ```shell
 > systemctl stop transmission-daemon
 > echo "{
@@ -119,7 +120,7 @@ Stop tranmission service to alter its settings file, then start it
       "upload-limit-enabled": 0,
       "upload-slots-per-torrent": 14,
       "utp-enabled": true
-  }" > /> /etc/transmission-daemon/settings.json
+  }" > /etc/transmission-daemon/settings.json
 > systemctl start transmission-daemon
 ```
 
