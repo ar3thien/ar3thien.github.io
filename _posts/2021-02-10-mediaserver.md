@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+# published: false
 title:  "Install Transmission Client & Minidlna on Debian 10"
 # date:   2021-02-09 18:43:09 +0100
 # categories: jekyll update
@@ -23,7 +23,7 @@ The container will be running with the following resources:
 # __Objectives__
 ---
 <br>
-  1. Download movies __securely__
+  1. Download media content __securely__
   2. Stream them to different devices at home
 
 # __Installation__
