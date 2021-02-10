@@ -36,23 +36,91 @@ I'm starting from a fresh Debian installation, so I will update the repo and upg
 
 Install the required dependencies
 ```shell
-> apt install -y transmission-daemon minidlna ```__cifs-utils__```
+> apt install -y transmission-daemon minidlna cifs-utils
 ```
 
-Install MongoDB v3.6
+Mount an external storage (NAS)
 ```shell
-> wget -qO - https://www.mongodb.org/static/pgp/server-3.6.asc | sudo apt-key add -
-> echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
-> sudo apt-get update && apt-get install -y mongodb-org
-> sudo systemctl start mongod
-> sudo systemctl enable mongod
+> echo "//nas/public/Downloads  /mnt/downloads  cifs    noperm,guest,vers=1.0" > /etc/fstab
 ```
 
-Obtain Omada Controller v4 binary from [TP-Link official website][omada-download] and install it
+Stop tranmission service to alter its settings file, then start it
 ```shell
-> cd /tmp
-> wget https://static.tp-link.com/2020/202012/20201211/omada_v4.2.8_linux_x64.deb
-> dpkg -i omada_v4.2.8_linux_x64.deb
+> systemctl stop transmission-daemon
+> echo "{
+      "alt-speed-down": 50,
+      "alt-speed-enabled": false,
+      "alt-speed-time-begin": 540,
+      "alt-speed-time-day": 127,
+      "alt-speed-time-enabled": false,
+      "alt-speed-time-end": 1020,
+      "alt-speed-up": 50,
+      "bind-address-ipv4": "0.0.0.0",
+      "bind-address-ipv6": "::",
+      "blocklist-enabled": true,
+      "blocklist-url": "https://github.com/sahsu/transmission-blocklist/releases/latest/download/blocklist.gz",
+      "cache-size-mb": 4,
+      "dht-enabled": true,
+      "download-dir": "/mnt/downloads",
+      "download-limit": 100,
+      "download-limit-enabled": 0,
+      "download-queue-enabled": true,
+      "download-queue-size": 5,
+      "encryption": 2,
+      "idle-seeding-limit": 30,
+      "idle-seeding-limit-enabled": false,
+      "incomplete-dir": "/var/lib/transmission-daemon/Downloads",
+      "incomplete-dir-enabled": false,
+      "lpd-enabled": false,
+      "max-peers-global": 200,
+      "message-level": 1,
+      "peer-congestion-algorithm": "",
+      "peer-id-ttl-hours": 6,
+      "peer-limit-global": 200,
+      "peer-limit-per-torrent": 100,
+      "peer-port": 51413,
+      "peer-port-random-high": 65535,
+      "peer-port-random-low": 49152,
+      "peer-port-random-on-start": false,
+      "peer-socket-tos": "default",
+      "pex-enabled": true,
+      "port-forwarding-enabled": false,
+      "preallocation": 1,
+      "prefetch-enabled": true,
+      "queue-stalled-enabled": true,
+      "queue-stalled-minutes": 30,
+      "ratio-limit": 0,
+      "ratio-limit-enabled": true,
+      "rename-partial-files": true,
+      "rpc-authentication-required": false,
+      "rpc-bind-address": "0.0.0.0",
+      "rpc-enabled": true,
+      "rpc-host-whitelist": "",
+      "rpc-host-whitelist-enabled": false,
+      "rpc-password": "{7ca0398783a1b3a464bef523b4edfd5a4f790b1cecpEwNbI",
+      "rpc-port": 9091,
+      "rpc-url": "/transmission/",
+      "rpc-username": "transmission",
+      "rpc-whitelist": "127.0.0.1",
+      "rpc-whitelist-enabled": false,
+      "scrape-paused-torrents-enabled": true,
+      "script-torrent-done-enabled": true,
+      "script-torrent-done-filename": "/usr/bin/OpenSubtitlesDownload.py $TR_TORRENT_DIR",
+      "seed-queue-enabled": false,
+      "seed-queue-size": 10,
+      "speed-limit-down": 100,
+      "speed-limit-down-enabled": false,
+      "speed-limit-up": 0,
+      "speed-limit-up-enabled": true,
+      "start-added-torrents": true,
+      "trash-original-torrent-files": false,
+      "umask": 18,
+      "upload-limit": 100,
+      "upload-limit-enabled": 0,
+      "upload-slots-per-torrent": 14,
+      "utp-enabled": true
+  }" > /> /etc/transmission-daemon/settings.json
+> systemctl start transmission-daemon
 ```
 
 # __Resource Usage__
