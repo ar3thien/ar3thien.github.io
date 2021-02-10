@@ -135,6 +135,7 @@ systemctl restart minidlna
 ---  
 <br>
 For security reason, we will place this server behind a DMZ. I use [OPNSense][opnsense-info] as a firewall.
+My DMZ setup consists of allowing all outbound connections to the internet, but no to the LAN.
 
 
 [transmission-info]: https://transmissionbt.com/
