@@ -11,7 +11,9 @@ title:  "Install Transmission Client & Minidlna on Debian 10"
 <br>
 In this tutorial I will show you how to install [transmission][transmission-info] and [minidlna][minidlna-info] on a [Debian 10][debian-info] machine.
 
-
+Needs:
+  * Download movies __securely__
+  * Stream them to different devices at home
 
 My environment is hosted on a [Proxmox][proxmox-info] hypervisor and running on a [LXC][lxc-info] container.
 
@@ -19,7 +21,6 @@ The container will be running with the following resources:
   * 1 vCPU
   * 128 MB RAM
   * 4 GB disk
-
 
 # __Installation__
 ---
