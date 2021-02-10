@@ -4,6 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I am a technical engineer from the IT world. I have over 10 years of experience in different companies from  different locations in the world. In this blog I write my personal documentations of few projects I'm working on. In case you have any question or remark, do not hesitate to drop me an email.
+I am a technical engineer from the IT world. I have over 10 years of experience in different companies from  different locations in the world. In this blog I write my personal documentations of few projects I'm working on. My interests fall around cloud computing, linux os, opensource router firmwares, networking, and much more...
+In case you have any question or remark, do not hesitate to drop me an email.
 
 ENJOY READING !
