@@ -36,7 +36,7 @@ I'm starting from a fresh Debian installation, so I will update the repo and upg
 
 Install the required dependencies
 ```shell
-> apt install -y transmission-daemon minidlna __cifs-utils__
+> apt install -y transmission-daemon minidlna `__cifs-utils__`
 ```
 
 Install MongoDB v3.6
