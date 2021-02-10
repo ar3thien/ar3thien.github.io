@@ -1,6 +1,6 @@
 ---
 layout: post
-# published: false
+published: false
 title:  "Install Transmission Client & Minidlna on Debian 10"
 # date:   2021-02-09 18:43:09 +0100
 # categories: jekyll update
