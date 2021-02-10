@@ -1,6 +1,6 @@
 ---
 layout: post
-# published: false
+published: false
 title:  "Install Transmission Client & Minidlna on Debian 10"
 # date:   2021-02-09 18:43:09 +0100
 # categories: jekyll update
@@ -9,7 +9,9 @@ title:  "Install Transmission Client & Minidlna on Debian 10"
 # __Introduction__
 ---
 <br>
-In this tutorial I will show you how to install [transmission][transmission-info] on a [Debian 10][debian-info] machine.
+In this tutorial I will show you how to install [transmission][transmission-info] and [minidlna][minidlna-info] on a [Debian 10][debian-info] machine.
+
+
 
 My environment is hosted on a [Proxmox][proxmox-info] hypervisor and running on a [LXC][lxc-info] container.
 
@@ -56,6 +58,6 @@ Obtain Omada Controller v4 binary from [TP-Link official website][omada-download
 
 [transmission-info]: https://transmissionbt.com/
 [debian-info]: https://www.debian.org/
-[debian-10]: https://releases.ubuntu.com/18.04/
+[minidlna-info]: https://wiki.debian.org/minidlna
 [lxc-info]: https://linuxcontainers.org/lxc/introduction/
 [proxmox-info]: https://www.proxmox.com/en/proxmox-ve
