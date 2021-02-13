@@ -25,6 +25,9 @@ Based on [AWS CloudWatch documentation][cw-mathmetric], the RATE expression retu
 
 The bug that will happen by using AWS expression is that at the first day of every month the EstimatedCharges metric will be lower than the last metric of the last of the previous month. That means the expression will give a negative value, which will __NEVER EVER__ trigger the daily alarm at the first day of the month. Meaning that you can consume 1000$ just on your first day of the month, if you have consumed 1001$ on the previous whole month.
 
+I will add the graph below to explain how it will look:
+![My helpful screenshot](/assets/aws-estimatedcharges-problem.png)
+
 As stated in my objective, I want to be able to monitor the spending to the closest minimum interval. CloudWatch EstimatedCharges metric is published at approximately six-hour. So instead of multiplying by 86400 which is equivalent to 1 day, why not multiplying by the metric period itself, which is 6 hours, and that way I can get more accurate results on my spending, hence better governance.
 
 In this tutorial I will show you how to install [TP-Link Omada Controller][omada-info] on a [Ubuntu 18.04][ubuntu-18] machine.
