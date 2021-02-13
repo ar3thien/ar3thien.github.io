@@ -57,10 +57,5 @@ A 6 hours interval will allow me to be more reactive to any unexpected spending.
 <br>
 If you have multiple AWS accounts and you'd like to automate monitoring their daily charges, check this post that explains how to do it.
 
-[omada-download]: https://www.tp-link.com/en/support/download/omada-software-controller/#Controller_Software
-[omada-info]: https://www.tp-link.com/en/omada-sdn/
-[ubuntu-18]: https://releases.ubuntu.com/18.04/
-[lxc-info]: https://linuxcontainers.org/lxc/introduction/
-[proxmox-info]: https://www.proxmox.com/en/proxmox-ve
 [aws-doc]: https://aws.amazon.com/premiumsupport/knowledge-center/cloudwatch-estimatedcharges-alarm/
 [cw-mathmetric]: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html

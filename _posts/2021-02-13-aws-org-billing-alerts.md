@@ -24,7 +24,7 @@ The below architecture describes the final outcome of this solution:
 # __Where to start?__
 ---
 <br>
-Since we're in an AWS Organizations structure, we could benefit from CloudFormation stacksets to deploy a template that will create the following resources:
+Since we're in an AWS Organizations structure, we could benefit from [CloudFormation stacksets][cf-stacksets] to deploy a template that will create the following resources:
 1. A CloudWatch alarm based on a certain threshold
 2. An EventBridge IAM role
 3. An Event Bridge rule
@@ -53,10 +53,4 @@ In my CloudWatch alarms, I use a period of 6 hours, because of my requirement to
 <br>
 If you have multiple AWS accounts and you'd like to automate monitoring their daily charges, check this post that explains how to do it.
 
-[omada-download]: https://www.tp-link.com/en/support/download/omada-software-controller/#Controller_Software
-[omada-info]: https://www.tp-link.com/en/omada-sdn/
-[ubuntu-18]: https://releases.ubuntu.com/18.04/
-[lxc-info]: https://linuxcontainers.org/lxc/introduction/
-[proxmox-info]: https://www.proxmox.com/en/proxmox-ve
-[aws-doc]: https://aws.amazon.com/premiumsupport/knowledge-center/cloudwatch-estimatedcharges-alarm/
-[cw-mathmetric]: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html
+[cf-stacksets]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html
