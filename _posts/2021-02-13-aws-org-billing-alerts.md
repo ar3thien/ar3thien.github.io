@@ -18,7 +18,8 @@ title:  "AWS - Monitoring Daily Usage In a Multi-Account Environment"
 One of my needs was to closely monitor AWS accounts daily spending in a multi-account environment. Multiple AWS accounts are usually part of AWS organizations and found in many enterprises that would like to split their prod, pre-prod, and test environments. Accounts can grow exponentially if the strategy is to split the accounts by activity as well. For someone governing the whole spending enveloppe, you need to ensure that a certain account does not exceed a certain amount. Also amounts can be different from account A to account B.
 
 # __The Solution__
-
+---
+<br>
 The solution consists of creating a `CloudWatch alarm` based on the EstimatedCharges metric. Let's name it "Billing-Alarm". For details on how to create this alarm, please refer to [AWS official KB][aws-doc].
 
 Then create an `EventBridge rule` that will forward the generated alarm from a member account to the `EventBridge bus` to the billing account, based on the following pattern.
