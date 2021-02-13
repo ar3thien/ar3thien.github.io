@@ -19,7 +19,9 @@ One of my needs was to closely monitor AWS accounts daily spending in a multi-ac
 
 # __The Solution__
 
-The solution consists of creating a `CloudWatch` alarm based on the EstimatedCharges metric. Then create an `EventBridge` rule that will forward the generated alarm from a member account to 
+The solution consists of creating a `CloudWatch alarm` based on the EstimatedCharges metric. For details on how to create this alarm, please refer to [AWS official KB][aws-doc].
+
+Then create an `EventBridge rule` that will forward the generated alarm from a member account to the `EventBridge bus` to the billing account, based on the following pattern.
 
 The below architecture describes the final outcome of this solution:
 
@@ -58,3 +60,4 @@ In my CloudWatch alarms, I use a period of 6 hours, because of my requirement to
 If you have multiple AWS accounts and you'd like to automate monitoring their daily charges, check this post that explains how to do it.
 
 [cf-stacksets]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html
+[aws-doc]: https://aws.amazon.com/premiumsupport/knowledge-center/cloudwatch-estimatedcharges-alarm/
