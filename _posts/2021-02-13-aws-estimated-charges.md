@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "AWS - Monitor Daily EstimatedCharges"
+title:  "AWS - Fixing EstimatedCharges Daily Monitoring"
 # date:   2021-02-09 18:43:09 +0100
 # categories: jekyll update
 ---
