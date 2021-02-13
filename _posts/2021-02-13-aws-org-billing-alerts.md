@@ -54,7 +54,7 @@ It will have the following trust policy:
 }
 ```
 
-And the following permissions policy:
+And the following permissions policy, which you can create as inline policy:
 
 ```json
 {
