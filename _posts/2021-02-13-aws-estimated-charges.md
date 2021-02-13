@@ -7,7 +7,7 @@ title:  "AWS - Monitor Daily EstimatedCharges"
 
 # __Objectives__
 ---
-<br>
+<!-- <br> -->
   1. Monitor daily AWS spending to the closest minimum interval
   2. Display it on a dashboard
   3. Generate alerts and get notified
