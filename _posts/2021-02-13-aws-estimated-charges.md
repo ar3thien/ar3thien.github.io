@@ -7,7 +7,7 @@ title:  "AWS - Monitor Daily EstimatedCharges"
 
 # __Objectives__
 ---
-<!-- <br> -->
+<br>
   1. Monitor daily AWS spending to the closest minimum interval
   2. Display it on a dashboard
   3. Generate alerts and get notified
@@ -24,7 +24,7 @@ After comparing their KB to my solution, although they look the same, I found fe
 
 # __What's the issue?__
 ---
-
+<br>
 I completely agree with all the content in AWS KB, modulo the expression used to calculate the daily usage:
 ```
 AWS expression: RATE(m1) * 86400
