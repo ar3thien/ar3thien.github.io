@@ -20,6 +20,10 @@ One of the needs was to closely monitor AWS accounts daily spending in a multi-a
 # __The Solution__
 ---
 <br>
+
+## __Member Account__
+---
+<br>
 The below architecture describes the final outcome of this solution:
 
 [ ![](/assets/billing-architecture.png) ](/assets/billing-architecture.png)
