@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "AWS - Monitoring Daily Usage In a Multi-Account Environment"
-published: false
+# published: false
 # date:   2021-02-09 18:43:09 +0100
 # categories: jekyll update
 ---
@@ -22,6 +22,19 @@ One of my needs was to closely monitor AWS accounts daily spending in a multi-ac
 The solution consists of creating a `CloudWatch alarm` based on the EstimatedCharges metric. For details on how to create this alarm, please refer to [AWS official KB][aws-doc].
 
 Then create an `EventBridge rule` that will forward the generated alarm from a member account to the `EventBridge bus` to the billing account, based on the following pattern.
+
+```json
+{
+  "detail-type": ["CloudWatch Alarm State Change"],
+  "source": ["aws.cloudwatch"],
+  "detail": {
+    "alarmName": ["Billing-Alarm"],
+    "state": {
+      "value": ["ALARM"]
+    }
+  }
+}
+```
 
 The below architecture describes the final outcome of this solution:
 
