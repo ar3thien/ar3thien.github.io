@@ -47,43 +47,10 @@ Finally applying my expression will generate the following graph:
 
 [ ![](/assets/aws-estimatedcharges-rate-fixed.png) ](/assets/aws-estimatedcharges-rate-fixed.png)
 
-<!-- # __Installation__
----
-<br>
-I'm starting from a fresh Ubuntu installation, so I will update the repo and upgrade the existing packages
-```shell
-> sudo apt-get update && apt-get -y upgrade
-```
-
-Install the required dependencies
-```shell
-> sudo apt-get -y install openjdk-8-jre-headless jsvc curl gnupg
-```
-
-Install MongoDB v3.6
-```shell
-> wget -qO - https://www.mongodb.org/static/pgp/server-3.6.asc | sudo apt-key add -
-> echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
-> sudo apt-get update && apt-get install -y mongodb-org
-> sudo systemctl start mongod
-> sudo systemctl enable mongod
-```
-
-Obtain Omada Controller v4 binary from [TP-Link official website][omada-download] and install it
-```shell
-> cd /tmp
-> wget https://static.tp-link.com/2020/202012/20201211/omada_v4.2.8_linux_x64.deb
-> dpkg -i omada_v4.2.8_linux_x64.deb
-```
-
-Finally set the server timezone
-```shell
-> timedatectl set-timezone <timezone>
-``` -->
-
 # __Final Thoughts__
 ---
 <br>
+If you have multiple AWS accounts and you'd like to automate monitoring their daily charges, check this post that explains how to do it.
 
 [omada-download]: https://www.tp-link.com/en/support/download/omada-software-controller/#Controller_Software
 [omada-info]: https://www.tp-link.com/en/omada-sdn/
