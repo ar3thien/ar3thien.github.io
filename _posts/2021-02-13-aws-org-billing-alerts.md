@@ -19,7 +19,7 @@ One of my needs was to closely monitor AWS accounts daily spending in a multi-ac
 
 # __The Solution__
 
-The solution consists of creating a `CloudWatch alarm` based on the EstimatedCharges metric. For details on how to create this alarm, please refer to [AWS official KB][aws-doc].
+The solution consists of creating a `CloudWatch alarm` based on the EstimatedCharges metric. Let's name it "Billing-Alarm". For details on how to create this alarm, please refer to [AWS official KB][aws-doc].
 
 Then create an `EventBridge rule` that will forward the generated alarm from a member account to the `EventBridge bus` to the billing account, based on the following pattern.
 
@@ -33,6 +33,43 @@ Then create an `EventBridge rule` that will forward the generated alarm from a m
       "value": ["ALARM"]
     }
   }
+}
+```
+
+The `EventBridge rule` will forward the alarm to the `EventBridge bus` under the billing account. In order to so, it needs an IAM role that we're going to create. Let's call it "EventBridge-InvokeEventBus-Role".
+It will have the following trust policy:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "events.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+```
+
+And the following permissions policy:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "events:PutEvents"
+            ],
+            "Resource": [
+                "arn:aws:events:us-east-1:<billing-account-id>:event-bus/default"
+            ],
+            "Effect": "Allow"
+        }
+    ]
 }
 ```
 
