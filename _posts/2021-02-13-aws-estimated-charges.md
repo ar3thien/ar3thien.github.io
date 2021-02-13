@@ -22,6 +22,9 @@ By googling a little while writing this post, I saw that AWS has now an [officia
 
 After comparing their KB to my solution, although they look the same, I found few differences. I will explain them, and I they have a bug in their solution based on my need.
 
+# __What's the issue?__
+---
+
 I completely agree with all the content in AWS KB, modulo the expression used to calculate the daily usage:
 ```
 AWS expression: RATE(m1) * 86400
