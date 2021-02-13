@@ -13,7 +13,7 @@ I had a need to closely monitor my AWS account for daily usage, knowing that any
 After some research, I found out that the best way to monitor my daily AWS account usage is using CloudWatch EstimatedCharges metric.
 By googling a little while writing this post, I saw that AWS has now an [official KB][aws-doc] on how to implement this, although when I implemented the solution there were none.
 
-After comparing their KB to my solution, although they look the same, I found few differences. I will explain them, and I believe they have a bug in their solution.
+After comparing their KB to my solution, although they look the same, I found few differences. I will explain them, and I they have a bug in their solution based on my need.
 
 I completely agree with all the content in AWS KB, modulo the expression used to calculate the daily usage:
 ```
@@ -23,7 +23,7 @@ My expression:  IF(RATE(m1) < 0, m1, RATE(m1)*PERIOD(m1))
 
 Based on [AWS CloudWatch documentation][cw-mathmetric], the RATE expression returns the rate of change of the metric per second. This is calculated as the difference between the latest data point value and the previous data point value, divided by the time difference in seconds between the two values.
 
-<!-- The bug that will happen by using AWS expression is that at the first day of every month the EstimatedCharges metric will be lower than the last metric of the last of the previous month. That means the expression will give a negative value, which will __NEVER EVER__ trigger the daily alarm at the first day of the month. Meaning that you can consume 2000$ just on your first day of the month, if you have consumed 2001$ on the previous whole month. -->
+The bug that will happen by using AWS expression is that at 00:00:00 of the first day of every month the EstimatedCharges metric will be 0. That means the expression will result in a negative value, which will break my dashboard.
 
 The graph below shows when the problem will occur before applying the CloudWatch expression:
 
@@ -41,7 +41,8 @@ Finally applying my expression will generate the following graph:
 ---
 <br>
   1. Monitor daily AWS spending to the closest minimum interval
-  2. Generate alerts and get notified
+  2. Display it on a dashboard
+  3. Generate alerts and get notified
 
 # __Installation__
 ---
