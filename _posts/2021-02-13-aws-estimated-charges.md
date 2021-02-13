@@ -8,7 +8,7 @@ title:  "AWS - Monitor Daily EstimatedCharges"
 # __Introduction__
 ---
 <br>
-I had a need to closely monitor my AWS account for daily usage, knowing that anyone can easily exceed his planned budget, by provisionning an oversized instance, or simply forgetting terminating unused ones. Usually those instance are dev and test instances. And if you happen you're in an enviroment where dev-ops teams have a lot to do, monitoring daily spending becomes a __MUST__.
+I had a need to closely monitor my AWS account for daily usage, knowing that anyone can easily exceed his planned budget, by provisionning an oversized instance, or simply by forgetting terminating unused ones. Usually those instance are dev and test instances. And if you happen you're in an enviroment where dev-ops teams have a lot to do, monitoring daily spending becomes a __MUST__.
 
 After some research, I found out that the best way to monitor my daily AWS account usage is using CloudWatch EstimatedCharges metric.
 By googling a little while writing this post, I saw that AWS has now an [official KB][aws-doc] on how to implement this, although when I implemented the solution there were none.
@@ -23,7 +23,7 @@ My expression: IF(RATE(m1) < 0, m1, RATE(m1)*PERIOD(m1))
 
 Based on [AWS CloudWatch documentation][cw-mathmetric], the RATE expression returns the rate of change of the metric per second. This is calculated as the difference between the latest data point value and the previous data point value, divided by the time difference in seconds between the two values.
 
-The bug that will happen by using AWS expression is that at the first day of every month the EstimatedCharges metric will be lower than the last metric of the last of the previous month. That means the expression will give a negative value, which will __NEVER EVER__ trigger the daily alarm at the first day of the month. Meaning that you can consume 1000$ just on your first day of the month, if you have consumed 1001$ on the previous whole month.
+The bug that will happen by using AWS expression is that at the first day of every month the EstimatedCharges metric will be lower than the last metric of the last of the previous month. That means the expression will give a negative value, which will __NEVER EVER__ trigger the daily alarm at the first day of the month. Meaning that you can consume 2000$ just on your first day of the month, if you have consumed 2001$ on the previous whole month.
 
 The graph below shows when the problem will occur before applying the CloudWatch expression:
 
