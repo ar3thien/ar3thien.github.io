@@ -33,6 +33,10 @@ Now applying AWS expression will give the following graph, emphisizing more the 
 
 [ ![](/assets/aws-estimatedcharges-rate-problem.png) ](/assets/aws-estimatedcharges-rate-problem.png)
 
+Finally applying my expression will generate the following graph:
+
+[ ![](/assets/aws-estimatedcharges-rate-fixed.png) ](/assets/aws-estimatedcharges-rate-fixed.png)
+
 | __CPU__ | 1 |
 | __RAM__ | 512 MB |
 | __Disk__ | 4 GB |
