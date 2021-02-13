@@ -18,7 +18,7 @@ After comparing their KB to my solution, although it is the same, however there 
 I completely agree with all the content in AWS KB, modulo the expression used to calculate the daily usage:
 ```
 AWS expression: RATE(m1) * 86400
-My expression: IF(RATE(m1) < 0, m1, RATE(m1)*PERIOD(m1))
+My expression:  IF(RATE(m1) < 0, m1, RATE(m1)*PERIOD(m1))
 ```
 
 Based on [AWS CloudWatch documentation][cw-mathmetric], the RATE expression returns the rate of change of the metric per second. This is calculated as the difference between the latest data point value and the previous data point value, divided by the time difference in seconds between the two values.
