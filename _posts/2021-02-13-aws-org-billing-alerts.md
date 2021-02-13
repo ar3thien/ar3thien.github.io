@@ -6,25 +6,25 @@ title:  "AWS - Monitoring Daily Usage In a Multi-Account Environment"
 # categories: jekyll update
 ---
 
-# __Objectives__
+## __Objectives__
 ---
 <br>
   1. Monitor daily AWS spending in a multi-account environment to the closest minimum interval
   2. Generate alerts and get notified by a nice looking email
 
-# __Introduction__
+## __Introduction__
 ---
 <br>
 One of the needs is to closely monitor AWS accounts daily spending in a multi-account environment. Multiple AWS accounts are usually part of AWS organizations and found in many enterprises that would like to split their prod, pre-prod, and test environments. Accounts can grow exponentially if the strategy is to split the accounts per activity as well. For someone governing the whole spending envelope, you need to ensure that a certain account does not exceed a certain amount. Also amounts can be different from account A to account B.
 
-# __The Solution__
+## __The Solution__
 ---
 <br>
 The below architecture describes the final outcome of this solution:
 
 [ ![](/assets/billing-architecture.png) ](/assets/billing-architecture.png)
 
-## __Member Account__
+# __Member Account__
 ---
 <br>
 You will need to create a `CloudWatch alarm` based on the EstimatedCharges metric. Let's name it "Billing-Alarm". For details on how to create this alarm, please refer to [AWS official KB][aws-doc].
@@ -81,11 +81,11 @@ And the following permissions policy, which you can create as inline policy:
 }
 ```
 
-## __Billing Account__
+# __Billing Account__
 ---
 <br>
 
-# __Where to start?__
+## __Where to start?__
 ---
 <br>
 Since you're in an AWS Organizations structure, you can benefit from [CloudFormation stacksets][cf-stacksets] to deploy a template that will create the following resources:
@@ -112,7 +112,7 @@ Finally applying my expression will generate the following graph:
 On the other hand, I'm using the PERIOD function instead of a fixed number, which will allow me to inherit the value of the PERIOD of the graph on which the alert is applied.
 In my CloudWatch alarms, I use a period of 6 hours, because of my requirement to have a monitoring to the closest minimum interval.
 
-# __Final Thoughts__
+## __Final Thoughts__
 ---
 <br>
 If you have multiple AWS accounts and you'd like to automate monitoring their daily charges, check this post that explains how to do it.
