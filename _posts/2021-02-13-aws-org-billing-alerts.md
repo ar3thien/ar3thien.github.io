@@ -25,7 +25,7 @@ The below architecture describes the final outcome of this solution:
 [ ![](/assets/billing-architecture.png) ](/assets/billing-architecture.png)
 
 # __Member Account__
-<br>
+
 You will need to create a `CloudWatch alarm` based on the EstimatedCharges metric. Let's name it "Billing-Alarm". For details on how to create this alarm, please refer to [AWS official KB][aws-doc].
 
 Then create an `EventBridge rule` that will forward the generated alarm from a member account to the `EventBridge bus` in the billing account, based on the following pattern:
@@ -81,8 +81,7 @@ And the following permissions policy, which you can create as inline policy:
 ```
 
 # __Billing Account__
----
-<br>
+
 
 ## __Where to start?__
 ---
