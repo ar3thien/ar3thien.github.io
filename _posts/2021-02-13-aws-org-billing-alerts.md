@@ -20,9 +20,13 @@ One of my needs was to closely monitor AWS accounts daily spending in a multi-ac
 # __The Solution__
 ---
 <br>
+The below architecture describes the final outcome of this solution:
+
+[ ![](/assets/billing-architecture.png) ](/assets/billing-architecture.png)
+
 The solution consists of creating a `CloudWatch alarm` based on the EstimatedCharges metric. Let's name it "Billing-Alarm". For details on how to create this alarm, please refer to [AWS official KB][aws-doc].
 
-Then create an `EventBridge rule` that will forward the generated alarm from a member account to the `EventBridge bus` to the billing account, based on the following pattern.
+Then create an `EventBridge rule` that will forward the generated alarm from a member account to the `EventBridge bus` to the billing account, based on the following pattern:
 
 ```json
 {
@@ -73,10 +77,6 @@ And the following permissions policy, which you can create as inline policy:
     ]
 }
 ```
-
-The below architecture describes the final outcome of this solution:
-
-[ ![](/assets/billing-architecture.png) ](/assets/billing-architecture.png)
 
 # __Where to start?__
 ---
