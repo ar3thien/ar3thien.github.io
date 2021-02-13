@@ -15,7 +15,7 @@ title:  "AWS - Monitoring Daily Usage In a Multi-Account Environment"
 # __Introduction__
 ---
 <br>
-One of my needs was to closely monitor AWS accounts daily spending in a multi-account environment. Multiple AWS accounts are usually part of AWS organizations and found in many enterprises that would like to split their prod, pre-prod, and test environments. Accounts can grow exponentially if the strategy is to split the accounts by activity as well. For someone governing the whole spending enveloppe, you need to ensure that a certain account does not exceed a certain amount. Also amounts can be different from account A to account B.
+One of the needs was to closely monitor AWS accounts daily spending in a multi-account environment. Multiple AWS accounts are usually part of AWS organizations and found in many enterprises that would like to split their prod, pre-prod, and test environments. Accounts can grow exponentially if the strategy is to split the accounts per activity as well. For someone governing the whole spending envelope, you need to ensure that a certain account does not exceed a certain amount. Also amounts can be different from account A to account B.
 
 # __The Solution__
 ---
@@ -26,7 +26,7 @@ The below architecture describes the final outcome of this solution:
 
 The solution consists of creating a `CloudWatch alarm` based on the EstimatedCharges metric. Let's name it "Billing-Alarm". For details on how to create this alarm, please refer to [AWS official KB][aws-doc].
 
-Then create an `EventBridge rule` that will forward the generated alarm from a member account to the `EventBridge bus` to the billing account, based on the following pattern:
+Then create an `EventBridge rule` that will forward the generated alarm from a member account to the `EventBridge bus` in the billing account, based on the following pattern:
 
 ```json
 {
@@ -41,7 +41,7 @@ Then create an `EventBridge rule` that will forward the generated alarm from a m
 }
 ```
 
-The `EventBridge rule` will forward the alarm to the `EventBridge bus` under the billing account. In order to so, it needs an IAM role that we're going to create. Let's call it "EventBridge-InvokeEventBus-Role".
+As stated previously, the `EventBridge rule` will forward the alarm to the `EventBridge bus` under the billing account. In order to so, it needs an IAM role that you're going to create. Let's call it "EventBridge-InvokeEventBus-Role".
 It will have the following trust policy:
 
 ```json
@@ -81,7 +81,7 @@ And the following permissions policy, which you can create as inline policy:
 # __Where to start?__
 ---
 <br>
-Since we're in an AWS Organizations structure, we could benefit from [CloudFormation stacksets][cf-stacksets] to deploy a template that will create the following resources:
+Since you're in an AWS Organizations structure, you can benefit from [CloudFormation stacksets][cf-stacksets] to deploy a template that will create the following resources:
 1. A CloudWatch alarm based on a certain threshold
 2. An EventBridge IAM role
 3. An Event Bridge rule
