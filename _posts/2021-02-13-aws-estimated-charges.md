@@ -9,8 +9,10 @@ title:  "AWS - Monitor Daily EstimatedCharges"
 ---
 <br>
 I had a need to closely monitor my AWS account for daily usage, knowing that anyone can easily exceed his planned budget, by provisionning an oversized instance, or simply forgetting terminating unused ones. Usually those instance are dev and test instances. And if you happen you're in an enviroment where dev-ops teams have a lot to do, monitoring daily spending becomes a __MUST__.
+
 After some research, I found out that the best way to monitor my daily AWS account usage is using CloudWatch EstimatedCharges metric.
 By googling a little while writing this post, I saw that AWS has now an [official KB][aws-doc] on how to implement this, although when I implemented the solution there were none.
+
 After comparing their KB to my solution, although it is the same, however there are few differences. I will explain them, and I believe they have a bug in their solution.
 
 I completely agree with all the content in AWS KB, modulo the expression used to calculate the daily usage:
