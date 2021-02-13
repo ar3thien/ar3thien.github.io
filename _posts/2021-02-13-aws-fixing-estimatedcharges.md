@@ -39,7 +39,7 @@ The graph below shows when the problem will occur before applying the CloudWatch
 
 [ ![](/assets/aws-estimatedcharges-problem.png) ](/assets/aws-estimatedcharges-problem.png)
 
-Now applying AWS expression will give the following graph, emphisizing more the bug:
+Now applying AWS expression will give the following graph, emphasizing more the bug:
 
 [ ![](/assets/aws-estimatedcharges-rate-problem.png) ](/assets/aws-estimatedcharges-rate-problem.png)
 
