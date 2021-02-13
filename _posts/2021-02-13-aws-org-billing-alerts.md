@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "AWS - Monitoring Daily Usage In a Multi-Account Environment"
-published: false
+# published: false
 # date:   2021-02-09 18:43:09 +0100
 # categories: jekyll update
 ---
@@ -15,21 +15,19 @@ published: false
 # __Introduction__
 ---
 <br>
-I had a need to closely monitor my AWS account for daily usage, knowing that anyone can easily exceed his planned budget, by provisionning an oversized instance, or simply by forgetting terminating unused ones. Usually those instance are dev and test instances. And if you're in an enviroment where dev-ops teams have a lot to do, monitoring daily spending becomes a __MUST__.
+One of my needs was to closely monitor AWS accounts daily spending in a multi-account environment. Multiple AWS accounts are usually part of AWS organizations and found in many enterprises that would like to split their prod, pre-prod, and test environments. Accounts can grow exponentially if the strategy is to split the accounts by activity as well. For someone governing the whole spending enveloppe, you need to ensure that a certain account does not exceed a certain amount. Also amounts can be different from account A to account B.
 
-After some research, I found out that the best way to monitor my daily AWS account usage is using CloudWatch EstimatedCharges metric.
-By googling a little while writing this post, I saw that AWS has now an [official KB][aws-doc] on how to implement this, although when I implemented the solution there were none.
+Below is the final of this solution:
 
-After comparing their KB to my solution, although they look the same, I found few differences. I will explain them, and I they have a bug in their solution based on my need.
+[ ![](/assets/billing-architecture.png) ](/assets/billing-architecture.png)
 
-# __What's the issue?__
+# __Where to start?__
 ---
 <br>
-I completely agree with all the content in AWS KB, modulo the expression used to calculate the daily usage:
-```
-AWS expression: RATE(m1) * 86400
-My expression:  IF(RATE(m1) < 0, m1, RATE(m1)*PERIOD(m1))
-```
+Since we're in an AWS Organizations structure, we could benefit from CloudFormation stacksets to deploy a template that will create the following resources:
+1. A CloudWatch alarm based on a certain threshold
+2. An EventBridge IAM role
+3. An Event Bridge rule
 
 Based on [AWS CloudWatch documentation][cw-mathmetric], the RATE expression returns the rate of change of the metric per second. This is calculated as the difference between the latest data point value and the previous data point value, divided by the time difference in seconds between the two values.
 
