@@ -92,29 +92,11 @@ Since you're in an AWS Organizations structure, you can benefit from [CloudForma
 2. An EventBridge IAM role
 3. An Event Bridge rule
 
-Based on [AWS CloudWatch documentation][cw-mathmetric], the RATE expression returns the rate of change of the metric per second. This is calculated as the difference between the latest data point value and the previous data point value, divided by the time difference in seconds between the two values.
-
-The bug that will happen by using AWS expression is that at 00:00:00 of the first day of every month the EstimatedCharges metric will be 0. That means the expression will result in a negative value, which will break my dashboard.
-
-The graph below shows when the problem will occur before applying the CloudWatch expression:
-
-[ ![](/assets/aws-estimatedcharges-problem.png) ](/assets/aws-estimatedcharges-problem.png)
-
-Now applying AWS expression will give the following graph, emphisizing more the bug:
-
-[ ![](/assets/aws-estimatedcharges-rate-problem.png) ](/assets/aws-estimatedcharges-rate-problem.png)
-
-Finally applying my expression will generate the following graph:
-
-[ ![](/assets/aws-estimatedcharges-rate-fixed.png) ](/assets/aws-estimatedcharges-rate-fixed.png)
-
-On the other hand, I'm using the PERIOD function instead of a fixed number, which will allow me to inherit the value of the PERIOD of the graph on which the alert is applied.
-In my CloudWatch alarms, I use a period of 6 hours, because of my requirement to have a monitoring to the closest minimum interval.
-
 ## __Final Thoughts__
 ---
 <br>
-If you have multiple AWS accounts and you'd like to automate monitoring their daily charges, check this post that explains how to do it.
+You might want to place the SES service in a dedicated account for core infrastructure services like Transit Gatways and Route53, and share it with other accounts. For more information on how to do it, feel free to check the following [AWS documentation][ses-doc].
 
 [cf-stacksets]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html
 [aws-doc]: https://aws.amazon.com/premiumsupport/knowledge-center/cloudwatch-estimatedcharges-alarm/
+[ses-doc]: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-overview.html
