@@ -44,7 +44,7 @@ Finally applying my expression will generate the following graph:
   2. Display it on a dashboard
   3. Generate alerts and get notified
 
-# __Installation__
+<!-- # __Installation__
 ---
 <br>
 I'm starting from a fresh Ubuntu installation, so I will update the repo and upgrade the existing packages
@@ -76,7 +76,7 @@ Obtain Omada Controller v4 binary from [TP-Link official website][omada-download
 Finally set the server timezone
 ```shell
 > timedatectl set-timezone <timezone>
-```
+``` -->
 
 # __Final Thoughts__
 ---
