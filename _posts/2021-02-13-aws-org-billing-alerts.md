@@ -48,6 +48,9 @@ Finally applying my expression will generate the following graph:
 
 [ ![](/assets/aws-estimatedcharges-rate-fixed.png) ](/assets/aws-estimatedcharges-rate-fixed.png)
 
+On the other hand, I'm using the PERIOD function instead of a fixed number, which will allow me to inherit the value of the PERIOD of the graph on which the alert is applied.
+In my CloudWatch alarms, I use a period of 6 hours, because of my requirement to have a monitoring to the closest minimum interval.
+
 # __Final Thoughts__
 ---
 <br>
