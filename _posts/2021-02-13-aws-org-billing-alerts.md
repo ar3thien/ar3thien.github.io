@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "AWS - Monitoring Daily Usage In a Multi-Account Environment"
-# published: false
+published: false
 # date:   2021-02-09 18:43:09 +0100
 # categories: jekyll update
 ---
