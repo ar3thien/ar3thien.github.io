@@ -20,7 +20,7 @@ I had a need to closely monitor my AWS account for daily usage, knowing that any
 After some research, I found out that the best way to monitor my daily AWS account usage is using CloudWatch EstimatedCharges metric.
 By googling a little while writing this post, I saw that AWS has now an [official KB][aws-doc] on how to implement this, although when I implemented the solution there were none.
 
-After comparing their KB to my solution, although they look the same, I found few differences. I will explain them, and I they have a bug in their solution based on my need.
+After comparing their KB to my solution, although they look the same, I found few differences. I will explain them, and I believe the doc havs bug in regards to my need.
 
 # __What's the issue?__
 ---
