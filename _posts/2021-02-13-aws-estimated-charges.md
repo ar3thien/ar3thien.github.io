@@ -27,7 +27,7 @@ The bug that will happen by using AWS expression is that at the first day of eve
 
 I will add the graph below to explain how it will look:
 <!-- ![My helpful screenshot](/assets/aws-estimatedcharges-problem.png) -->
-[ ![](aws-estimatedcharges-problem.png) ](aws-estimatedcharges-problem.png)
+[ ![](/assets/aws-estimatedcharges-problem.png) ](/assets/aws-estimatedcharges-problem.png)
 
 As stated in my objective, I want to be able to monitor the spending to the closest minimum interval. CloudWatch EstimatedCharges metric is published at approximately six-hour. So instead of multiplying by 86400 which is equivalent to 1 day, why not multiplying by the metric period itself, which is 6 hours, and that way I can get more accurate results on my spending, hence better governance.
 
