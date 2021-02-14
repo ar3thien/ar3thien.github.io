@@ -55,7 +55,8 @@ A 6 hours interval will allow me to be more reactive to any unexpected spending.
 # __Final Thoughts__
 ---
 <br>
-If you have multiple AWS accounts and you'd like to automate monitoring their daily charges, check this post that explains how to do it.
+If you have multiple AWS accounts and you'd like to automate monitoring their daily charges, check [this post][org-link] that explains how to do it.
 
 [aws-doc]: https://aws.amazon.com/premiumsupport/knowledge-center/cloudwatch-estimatedcharges-alarm/
 [cw-mathmetric]: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html
+[org-link]: https://www.mangito.ga/2021/02/13/aws-org-billing-alerts.html
