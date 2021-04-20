@@ -94,7 +94,7 @@ Since you're in an AWS Organizations structure, you can benefit from [CloudForma
 ## __Final Thoughts__
 ---
 <br>
-You might want to place the SES service in a dedicated account for core infrastructure services like Transit Gatways and Route53, and share it with other accounts. For more information on how to do it, feel free to check the following [AWS documentation][ses-doc].
+You might want to place the SES service in a dedicated account for core infrastructure services like Transit Gateways and Route53, and share it with other accounts. For more information on how to do it, feel free to check the following [AWS documentation][ses-doc].
 
 [cf-stacksets]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html
 [aws-doc]: https://aws.amazon.com/premiumsupport/knowledge-center/cloudwatch-estimatedcharges-alarm/

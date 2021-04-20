@@ -17,14 +17,15 @@ The container will be running with the following resources:
 
 | __CPU__ | 1, limit: 0.5 |
 | __RAM__ | 96 MB |
-| __Disk__ | 4 GB |
+| __Root Disk__ | 4 GB |
+| __External Disk__ | 500 GB |
 | __VLAN__ | 100 |
 
 # __Objectives__
 ---
 <br>
   1. Download media content __securely__
-  2. Stream them to different devices at home
+  2. Stream it to different devices at home
 
 # __Installation__
 ---
@@ -36,14 +37,14 @@ I'm starting from a fresh Debian installation, so I will update the repo and upg
 
 Install the required dependencies
 ```shell
-> apt install -y transmission-daemon minidlna cifs-utils
+> apt install -y transmission-daemon minidlna
 ```
 
-Mount an external storage (NAS)
+<!-- Mount an external storage (NAS)
 ```shell
 > echo "//nas/public/Downloads  /mnt/downloads  cifs    noperm,guest,vers=1.0" > /etc/fstab
 > mount /mnt/downloads
-```
+``` -->
 
 Stop tranmission service to alter its settings file, then start it.
 Modify the settings options based on your needs.
@@ -135,8 +136,15 @@ systemctl restart minidlna
 ---  
 <br>
 For security reason, we will place this server behind a DMZ. I use [OPNSense][opnsense-info] as a firewall.
-My DMZ setup consists of allowing all outbound connections to the internet, but no to the LAN.
+My DMZ setup consists of allowing all outbound connections to the internet, but not to the LAN.
 
+As for the DLNA discovery to work between the LAN and the DMZ, you need to install the __UDP Broadcast Relay__ package from OPNSense repository, and make the following configuration:
+
+<picture>
+
+From a firewall perspective, you need also to allow the return traffic from the DMZ to the LAN clients as such:
+
+<picture>
 
 [transmission-info]: https://transmissionbt.com/
 [debian-info]: https://www.debian.org/
